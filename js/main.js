@@ -156,7 +156,7 @@
 			   }
 
 		    if ( navbar.is(':visible')) {
-		    	navbar.removeClass('in');
+		    	navbar.removeClass('show');
 		    	navbar.attr('aria-expanded', 'false');
 		    	$('.js-colorlib-nav-toggle').removeClass('active');
 		    }

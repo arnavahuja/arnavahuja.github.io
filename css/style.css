@@ -11,8 +11,33 @@
 *	Edit this section
 *
 * ======================================================= */
-body {
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #2c98f0;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 10000;
   font-family: "Quicksand", Arial, sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  -webkit-transition: top 0.3s;
+  -o-transition: top 0.3s;
+  transition: top 0.3s; }
+  .skip-link:focus {
+    top: 0;
+    color: #fff; }
+
+:root {
+  --bs-body-font-family: "Quicksand", Arial, sans-serif;
+  --bs-body-font-size: 15px;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.8;
+  --bs-body-color: rgba(0, 0, 0, 0.7); }
+
+body {
+  font-family: "Quicksand", Arial, sans-serif !important;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.8;
@@ -36,7 +61,7 @@ p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif !important;
   font-weight: 400;
   margin: 0 0 30px 0; }
 
@@ -449,10 +474,10 @@ body.offcanvas {
     bordeR: 1px solid #000;
     padding: 2px 10px; }
 
-.fancy-collapse-panel .panel-default > .panel-heading {
+.fancy-collapse-panel .accordion-item > .accordion-header {
   padding: 0; }
 
-.panel-heading a {
+.accordion-button {
   padding: 20px 25px;
   display: block;
   width: 100%;
@@ -469,8 +494,16 @@ body.offcanvas {
   -ms-box-shadow: none !important;
   -o-box-shadow: none !important;
   box-shadow: none !important; }
+  .accordion-button:not(.collapsed) {
+    background-color: #2c98f0 !important;
+    color: #fff !important;
+    box-shadow: none !important; }
+  .accordion-button:focus {
+    box-shadow: none !important; }
+  .accordion-button::after {
+    display: none; }
 
-.panel {
+.accordion-item {
   -webkit-box-shadow: none !important;
   -moz-box-shadow: none !important;
   -ms-box-shadow: none !important;
@@ -478,7 +511,8 @@ body.offcanvas {
   box-shadow: none !important;
   border: none; }
 
-.panel-heading a:after {
+.accordion-header .accordion-button:after {
+  display: block;
   font-family: "icomoon";
   content: "\e115";
   position: absolute;
@@ -487,17 +521,22 @@ body.offcanvas {
   font-weight: 400;
   top: 50%;
   line-height: 1;
-  margin-top: -7px; }
+  margin-top: -7px;
+  background-image: none;
+  width: auto;
+  height: auto;
+  -webkit-transform: none;
+  transform: none; }
 
-.panel-heading a.collapsed:after {
+.accordion-header .accordion-button.collapsed:after {
   content: "\e114"; }
 
-.panel-heading a.collapsed {
+.accordion-header .accordion-button.collapsed {
   background: #f2f3f7;
   border: 1px solid #e6e6e6 !important;
   color: #333333; }
 
-.panel-body {
+.accordion-body {
   padding: 1.5em;
   margin-top: 5px;
   border: 1px solid #e6e6e6 !important; }
@@ -612,6 +651,13 @@ body.offcanvas {
   -ms-filter: alpha(opacity=40);
   filter: alpha(opacity=40);
   font-size: 16px; }
+
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h4 {
+  font-size: 14px;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 15px 0; }
 
 .services {
   margin-bottom: 30px;
@@ -1062,7 +1108,8 @@ body.offcanvas {
       -ms-border-radius: 50%;
       border-radius: 50%; }
   .colorlib-counters .counter-wrap {
-    border: 1px solid red !important; }
+    position: relative;
+    z-index: 1; }
   .colorlib-counters .colorlib-counter {
     font-size: 40px;
     display: block;
@@ -1425,5 +1472,51 @@ body.offcanvas {
 .col-padding {
   padding: 10px !important; }
 
-.js .animate-box {
+.animate-box {
   opacity: 0; }
+
+/* Skills list layout */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 0 15px; }
+
+/* Skill buttons */
+.button.button1 {
+  display: inline-block;
+  background: transparent;
+  color: #000;
+  border: 1px solid #2c98f0;
+  padding: 8px 18px;
+  margin: 5px;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: default;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s; }
+  .button.button1:hover {
+    background: #2c98f0;
+    color: #fff; }
+
+/* Hero typed text */
+.hero-typed-text {
+  color: #FFFDD0; }
+
+/* Hero button text */
+.btn.btn-learn {
+  color: #fff !important;
+  border: 1px solid #fff;
+  background: transparent !important; }
+  .btn.btn-learn:hover {
+    background: transparent !important;
+    border: 1px solid #000 !important; }
+  .btn.btn-learn i {
+    color: #fff; }
