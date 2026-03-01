@@ -661,6 +661,9 @@ body.offcanvas {
   color: rgba(0, 0, 0, 0.6);
   margin: 0 0 15px 0; }
 
+.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h4 a {
+  color: rgba(0, 0, 0, 0.6); }
+
 .services {
   margin-bottom: 30px;
   padding: 1.5em;
